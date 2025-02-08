@@ -18,8 +18,10 @@ RUN sudo mkdir -p /usr/local/lib/python3.8/site-packages
 
 RUN sudo make install
 
-WORKDIR /home/starpu/starpu.git/starpupy/examples
-
 RUN echo "source /usr/local/bin/starpu_env" >> ~/.bashrc
+
+WORKDIR /home/starpu/starpupy_tutorial
+
+ADD tutorial/* .
 
 SHELL ["bash"]
